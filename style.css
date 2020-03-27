@@ -1,3 +1,5 @@
+/* desktop -- start */
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -36,8 +38,8 @@ header .brand p {
 }
 
 header .search {
-    position: relative;
-    left: 50%;
+    position: absolute;
+    right: 60px;
     background: inherit;
     border: 2px solid #cae8d5;
     height: 35px;
@@ -109,3 +111,29 @@ header .search {
 .list .country .number {
     color: #84142d;
 }
+
+
+/* desktop -- end */
+
+
+/* mobile -- start */
+
+.container {
+    grid-template-rows: 90px auto;
+}
+
+header .brand h1 {
+    font-size: 1.4rem;
+}
+
+header .search {
+    right: 10px;
+    width: 90px;
+    height: 20px;
+    padding: 0;
+    padding-left: 10px;
+    font-size: 0.5rem;
+}
+
+
+/* mobile -- end */
