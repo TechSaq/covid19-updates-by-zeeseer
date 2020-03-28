@@ -120,7 +120,7 @@ header .search {
 
 /* mobile -- start */
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:300px) {
     .container {
         grid-template-rows: 90px auto;
     }
