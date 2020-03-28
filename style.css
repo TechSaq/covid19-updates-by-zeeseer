@@ -9,7 +9,7 @@
 .container {
     display: grid;
     grid-template-columns: 3;
-    grid-template-rows: 80px auto;
+    grid-template-rows: 80px 85vh;
     grid-template-areas: "header header header" "data-container data-container data-container";
     height: 100vh;
     font-family: 'Baloo Thambi 2', sans-serif;
@@ -54,12 +54,18 @@ header .search {
     grid-area: data-container;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 80px auto;
+    grid-template-rows: auto;
     grid-template-areas: "total-confirmed total-deaths total-recovered" "list-confirmed list-deaths list-recovered";
     grid-auto-flow: row;
 }
 
 .card {
+    background: #84a9ac;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.total {
     background: #3b6978;
     display: flex;
     flex-direction: column;
@@ -68,11 +74,11 @@ header .search {
     color: #cae8d5;
 }
 
-.card h3 {
+.total h3 {
     font-size: 1.4rem;
 }
 
-.card p {
+.total p {
     margin-top: -15px;
     font-weight: bold;
     font-size: 1.6rem;
@@ -87,10 +93,6 @@ header .search {
     background: #84a9ac;
     overflow-y: auto;
     max-height: 73vh;
-}
-
-.list:not(:nth-child(3)) {
-    border-right: 1px solid #cae8d5;
 }
 
 .list .country {
@@ -118,21 +120,34 @@ header .search {
 
 /* mobile -- start */
 
-.container {
-    grid-template-rows: 90px auto;
-}
-
-header .brand h1 {
-    font-size: 1.4rem;
-}
-
-header .search {
-    right: 10px;
-    width: 90px;
-    height: 20px;
-    padding: 0;
-    padding-left: 10px;
-    font-size: 0.5rem;
+@media screen and (max-width:500px) {
+    .container {
+        grid-template-rows: 90px auto;
+    }
+    header .brand h1 {
+        font-size: 1.4rem;
+    }
+    header .search {
+        right: 10px;
+        width: 90px;
+        height: 20px;
+        padding: 0;
+        padding-left: 10px;
+        font-size: 0.5rem;
+    }
+    .data-container {
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "card" "card" "card";
+        grid-auto-flow: column;
+    }
+    .card {
+        height: calc(calc(100vh - 80px) / 3);
+    }
+    .list {
+        overflow-y: auto;
+        max-height: 100px;
+    }
 }
 
 
