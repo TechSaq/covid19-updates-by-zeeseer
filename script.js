@@ -58,7 +58,9 @@ const search = document.querySelector('.search');
 const values = document.querySelector('.data .values');
 const countryName = document.querySelector('.country-wrapper .name');
 let countryHTML = "";
-search.addEventListener('search', () => {
+search.addEventListener('search', (e) => {
+    e.preventDefault();
+    e.target.blur();
     searchCountry = search.value;
     fetch(`https://coronavirus-19-api.herokuapp.com/countries/${searchCountry}`)
         .then(response => response.json())
