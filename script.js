@@ -54,6 +54,7 @@ fetch(allCountriesLink)
     });
 
 
+const countryWrapper = document.querySelector('.country-wrapper');
 const search = document.querySelector('.search');
 const values = document.querySelector('.data .values');
 const countryName = document.querySelector('.country-wrapper .name');
@@ -76,7 +77,7 @@ search.addEventListener('search', (e) => {
         });
     search.value = "";
     dataContainer.classList.add('hide');
-
+    countryWrapper.classList.remove('hide');
 });
 
 const header = document.querySelector('.brand a');
@@ -85,8 +86,10 @@ const globalData = document.querySelector('.homepage a');
 
 header.addEventListener('click', () => {
     dataContainer.classList.remove('hide');
+    countryWrapper.classList.add('hide');
 });
 
 globalData.addEventListener('click', () => {
     dataContainer.classList.remove('hide');
+    countryWrapper.classList.add('hide');
 });
