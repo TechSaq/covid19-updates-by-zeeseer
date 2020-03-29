@@ -209,4 +209,19 @@
     .country-wrapper .data .values div:not(:last-child) {
         border-bottom: 1px solid #3b6978;
     }
+    /* mobile view -- start*/
+    
+    @media screen and (max-width:800px) {
+        .country-wrapper .data {
+            font-size: 1.4rem;
+            padding: 10px 20px;
+            border-radius: 15px;
+        }
+        .homepage {
+            margin-top: -100px;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+    }
+    /* mobile view -- end */
     /* single country display -- end */
